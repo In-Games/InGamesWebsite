@@ -26,7 +26,7 @@
         }
     </style>
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent:" style="background-color: rgb(0, 0, 0); color: rgb(0, 0, 0);">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent" style="height: 6%; background-color: rgb(0, 0, 0); color: rgb(0, 0, 0);">
         <a class="navbar-brand" href="/">InGames</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -34,25 +34,31 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="/index.html">Home<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="/addgame.html">Store Submission</a>
-                <a class="nav-item nav-link" href="/about.html" tabindex="-1" aria-disabled="true">About</a>
-                <a class="nav-item nav-link" href="/apply.html" tabindex="-1" aria-disabled="true" id="signup">Sign Up / Login</a>
-                <a class="nav-item nav-link" href="/news.html" tabindex="-1" aria-disabled="true" id="signup"> News</a>
+                <a class="nav-item nav-link active" href="/about.html" tabindex="-1" aria-disabled="true">About</a>
+                <a class="nav-item nav-link active" href="/news.html" tabindex="-1" aria-disabled="true" id="signup"> News</a>
+                <a class="nav-item nav-link active" href="/addgame.html">Store Submission</a>
+                <a class="nav-item nav-link active" href="/apply.html" tabindex="-1" aria-disabled="true" id="signup"></a>
 
                 </div>
         </div>
-    <a class="nav-item nav-link" style="height: 10%;" tabindex="-1" aria-disabled="true" href="/profile.html">Profile</a>
-    <a id="logout" class="nav-item nav-link" style="height: 10%;" onclick="logout()" tabindex="-1" aria-disabled="true" onclick="logout()" hidden="">Logout
-    </a>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" style="color: white; background-color: rgb(0, 0, 0); border: rgb(0, 0, 0);" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Profile
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" onclick="logout()">Logout</a>
+              <a href="/profile.html">View Profile</a>
+            </div>
+        </div>
     <button class="btn btn-primary" onclick="launcherwin()">Get Launcher</button>
 </nav>
         
         <br>
         <form style=" margin-left: 73%; width: 20%;">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" style="color: white; border:rgb(30, 30, 30); float: left; width: 60%; background-color: rgb(30, 30, 30);" aria-label="Search">
+            <input class="form-control mr-sm-2" type="search" value="Search" style="color: white; margin-top: -3%; color: white; border:rgb(30, 30, 30); float: left; width: 60%; background-color: rgb(30, 30, 30);" aria-label="Search">
         </form>
 
-        <div style="float: left; height:350px ; width: 70%; color: white; background-color: rgb(64, 64, 64); margin-left: 15%; margin-top: 1%;">
+        <div style="float: left; height:350px ; width: 75%; color: white; background-color: rgb(64, 64, 64); margin-left: 13%; margin-top: 2%;">
             <div style="margin-top: 15%; color: white; margin-left: 65%;">
                 Game Name
                 <br>
@@ -60,35 +66,35 @@
             </div>
         </div>
 
-        <div style="float: left; height:250px ; width: 13.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 15%; margin-top: 5%;">
+        <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 13%; margin-top: 5%;">
             <center style="margin-top: 135%;">
                 Game name
                 <br>
                 <small>Dev Name</small>
             </center>
         </div>
-        <div style="float: left; height:250px ; width: 13.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
+        <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
             <center style="margin-top: 135%;">
                 Game name
                 <br>
                 <small>Dev Name</small>
             </center>
         </div>
-        <div style="float: left; height:250px ; width: 13.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
+        <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
             <center style="margin-top: 135%;">
                 Game name
                 <br>
                 <small>Dev Name</small>
             </center>
         </div>
-        <div style="float: left; height:250px ; width: 13.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
+        <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
             <center style="margin-top: 135%;">
                 Game name
                 <br>
                 <small>Dev Name</small>
             </center>
         </div>
-        <div style="float: left; height:250px ; width: 13.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
+        <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
             <center style="margin-top: 135%;">
                 Game name
                 <br>
@@ -96,64 +102,64 @@
             </center>
         </div>
         
-       <div style="width: 20%; height: 200%; color:  #444548; float: right; margin-right: 7%; margin-top: 7%;">
+       <div style="width: 20%; height: 100%; color:  #444548; float: right; margin-right: 5%; margin-top: 7%;">
         <br>
 
-        <p style="color: rgb(120, 120, 120);">&nbsp; Categories</p>
+        <p style="color:white;">&nbsp; Categories</p>
         <hr style="background-color: white; width:60%; float: left;">
         <br>
         <br>
-        <a href="" style="color: rgb(80, 80, 80);">&nbsp; Action</a>
+        <a href="" style="color: white;">&nbsp; Action</a>
         <br>
         <br>
-        <a href="" style="color: rgb(80, 80, 80);">&nbsp; Adventure</a>
+        <a href="" style="color: white;">&nbsp; Adventure</a>
         <br>
         <br>
-        <a href="" style="color: rgb(80, 80, 80);">&nbsp; Puzzle</a>
+        <a href="" style="color: white;">&nbsp; Puzzle</a>
         <br>
         <br>
-        <a href="" style="color: rgb(80, 80, 80);">&nbsp; Racing</a>
+        <a href="" style="color: white;">&nbsp; Racing</a>
         <br>
         <br>
-        <a href="" style="color: rgb(80, 80, 80);">&nbsp; Shooter</a>
+        <a href="" style="color: white;">&nbsp; Shooter</a>
         <br>
         <br>
-        <a href="" style="color: rgb(80, 80, 80);">&nbsp; RPG</a>
+        <a href="" style="color: white;">&nbsp; RPG</a>
         <br>
         <br>
-        <a href="" style="color: rgb(80, 80, 80);">&nbsp; Strategy</a>
+        <a href="" style="color: white;">&nbsp; Strategy</a>
         <br>
         <br>
-        <a href="" style="color: rgb(80, 80, 80);">&nbsp; Survival</a>
+        <a href="" style="color: white;">&nbsp; Survival</a>
         <br>
         <br>
-        <a href="" style="color: rgb(80, 80, 80);">&nbsp; FPS</a>
+        <a href="" style="color: white;">&nbsp; FPS</a>
         <br>
         <br>
-        <a href="" style="color: rgb(80, 80, 80);">&nbsp; Horror</a>
+        <a href="" style="color: white;">&nbsp; Horror</a>
     </div>
-    <div style="float: left; height:250px ; width: 13.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 15%; margin-top: 9%;">
+    <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 13%; margin-top: 9%;">
         <center style="margin-top: 135%;">
             Game name
             <br>
             <small>Dev Name</small>
         </center>
     </div>
-    <div style="float: left; height:250px ; width: 13.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 9%;">
+    <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 9%;">
         <center style="margin-top: 135%;">
             Game name
             <br>
             <small>Dev Name</small>
         </center>
     </div>
-    <div style="float: left; height:250px ; width: 13.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 9%;">
+    <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 9%;">
         <center style="margin-top: 135%;">
             Game name
             <br>
             <small>Dev Name</small>
         </center>
     </div>
-    <div style="float: left; height:250px ; width: 13.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 9%;">
+    <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 9%;">
         <center style="margin-top: 135%;">
             Game name
             <br>
@@ -201,5 +207,4 @@
             window.location.reload();
         }
     </script>
-
 </body></html>
