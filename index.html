@@ -3,8 +3,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -42,23 +40,16 @@
                 <a class="nav-item nav-link active" href="/about.html" tabindex="-1" aria-disabled="true">About</a>
                 <a class="nav-item nav-link active" href="/news.html" tabindex="-1" aria-disabled="true"> News</a>
                 <a class="nav-item nav-link active" href="/addgame.html">Store Submission</a>
-                <a class="nav-item nav-link active" href="/apply.html" tabindex="-1" aria-disabled="true" id="signup">Sign up / Sign in</a>
-
                 </div>
-        </div>
-        <div class="dropdown show">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: rgb(0, 0, 0); border-color: rgb(0, 0, 0);">
-              Profile
-            </a>
-          
-            <div class="dropdown-menu" id="logout" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" onclick="logout()">Logout</a>
+
             </div>
-          </div>
+
+            <a class="nav-item nav-link active" style="float: right;" onclick="logout()" tabindex="-1" aria-disabled="true" id="logout">Logout</a>
+            <a class="nav-item nav-link active" style="float: right;" href="/apply.html" tabindex="-1" aria-disabled="true" id="signup">Sign up</a>
     <button class="btn btn-primary" onclick="launcher()">Get Launcher</button>
 </nav>  
         <br>
-        <form style=" margin-left: 75%; width: 20%;">
+        <form style=" margin-left: 76%; width: 20%;">
             <input class="form-control" type="search" placeholder="Search" style="color: white; margin-top: -3%; color: white; border:rgb(30, 30, 30); float: left; width: 60%; background-color: rgb(30, 30, 30);" aria-label="Search">
         </form>
 
@@ -70,107 +61,78 @@
             </div>
         </div>
 
-        <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 13%; margin-top: 5%;">
-            <center style="margin-top: 135%;">
+        <div style="float: left; height:300px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 13%; margin-top: 5%;">
+            <center style="margin-top: 150%;">
                 Game name
                 <br>
                 <small>Dev Name</small>
             </center>
         </div>
-        <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
-            <center style="margin-top: 135%;">
+        <div style="float: left; height:300px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
+            <center style="margin-top: 150%;">
                 Game name
                 <br>
                 <small>Dev Name</small>
             </center>
         </div>
-        <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
-            <center style="margin-top: 135%;">
+        <div style="float: left; height:300px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
+            <center style="margin-top: 150%;">
                 Game name
                 <br>
                 <small>Dev Name</small>
             </center>
         </div>
-        <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
-            <center style="margin-top: 135%;">
+        <div style="float: left; height:300px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
+            <center style="margin-top: 150%;">
                 Game name
                 <br>
                 <small>Dev Name</small>
             </center>
         </div>
-        <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
-            <center style="margin-top: 135%;">
+        <div style="float: left; height:300px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
+            <center style="margin-top: 150%;">
                 Game name
                 <br>
                 <small>Dev Name</small>
             </center>
         </div>
         
-       <div style="width: 20%; height: 100%; color:  #444548; float: right; margin-right: 5%; margin-top: 7%;">
-        <br>
-
-        <p style="color:white;">&nbsp; Categories</p>
-        <hr style="background-color: white; width:60%; margin-right: 40%;">
-        <br>
-        <br>
-        <a href="" style="color: white;">&nbsp; Action</a>
-        <br>
-        <br>
-        <a href="" style="color: white;">&nbsp; Adventure</a>
-        <br>
-        <br>
-        <a href="" style="color: white;">&nbsp; Puzzle</a>
-        <br>
-        <br>
-        <a href="" style="color: white;">&nbsp; Racing</a>
-        <br>
-        <br>
-        <a href="" style="color: white;">&nbsp; Shooter</a>
-        <br>
-        <br>
-        <a href="" style="color: white;">&nbsp; RPG</a>
-        <br>
-        <br>
-        <a href="" style="color: white;">&nbsp; Strategy</a>
-        <br>
-        <br>
-        <a href="" style="color: white;">&nbsp; Survival</a>
-        <br>
-        <br>
-        <a href="" style="color: white;">&nbsp; FPS</a>
-        <br>
-        <br>
-        <a href="" style="color: white;">&nbsp; Horror</a>
-    </div>
-    <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 13%; margin-top: 9%;">
-        <center style="margin-top: 135%;">
+    <div style="float: left; height:300px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 13%; margin-top: 9%;">
+        <center style="margin-top: 150%;">
             Game name
             <br>
             <small>Dev Name</small>
         </center>
     </div>
-    <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 9%;">
-        <center style="margin-top: 135%;">
+    <div style="float: left; height:300px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 9%;">
+        <center style="margin-top: 150%;">
             Game name
             <br>
             <small>Dev Name</small>
         </center>
     </div>
-    <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 9%;">
-        <center style="margin-top: 135%;">
+    <div style="float: left; height:300px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 9%;">
+        <center style="margin-top: 150%;">
             Game name
             <br>
             <small>Dev Name</small>
         </center>
     </div>
-    <div style="float: left; height:250px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 9%;">
-        <center style="margin-top: 135%;">
+    <div style="float: left; height:300px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 9%;">
+        <center style="margin-top: 150%;">
             Game name
             <br>
             <small>Dev Name</small>
         </center>
     </div>
-    <center style="margin-top: 100%; color: lightgray; margin-left: 33%;">
+    <div style="float: left; height:300px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 9%;">
+        <center style="margin-top: 150%;">
+            Game name
+            <br>
+            <small>Dev Name</small>
+        </center>
+    </div>
+    <center style="margin-top: 100%; color: lightgray;;">
         InGames 2020
         <br>
         <br>
