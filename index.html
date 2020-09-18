@@ -56,7 +56,7 @@
               <a class="dropdown-item">Profile</a>
             </div>
           </div>
-    <button class="btn btn-primary" onclick="launcherwin()">Get Launcher</button>
+    <button class="btn btn-primary" onclick="launcher()">Get Launcher</button>
 </nav>  
         <br>
         <form style=" margin-left: 75%; width: 20%;">
@@ -189,22 +189,17 @@
             document.getElementById("logout").hidden = false;
             document.getElementById("signup").hidden = true;
         }
-        function launchermac(){
-            if(localStorage.getItem("username") == null){
-                alert("You cannot download this item without an active subscription")
-                return;
-            }
-            
-            window.location = "https://ingames.ml/InGames%20Launcher%20Mac.zip";
-        }
         
-        function launcherwin(){
+        function launcher(){
             if(localStorage.getItem("username") == null){
                 alert("You cannot download this item without an active subscription")
                 return;
             }
-            
-            window.location = "https://ingames.ml/InGames%20Launcher%20Win.zip";
+            if(navigator.platform.charAt(0) == "M"){
+                 window.location = "https://ingames.ml/InGames%20Launcher%20Mac.zip";
+             }else{
+                 window.location = "https://ingames.ml/InGames%20Launcher%20Win.zip";
+             }
         }
         function logout(){
             alert("Logged out!");
