@@ -73,10 +73,6 @@
     firebase.initializeApp(firebaseConfig)
 
     function store(){
-        if(!document.getElementById("terms").checked){
-            alert("You should accept the terms of use first!");
-            return;
-        }
         var name = document.getElementById("firstname").value;
         var surname = document.getElementById("surname").value;
         var gamename = document.getElementById("gamename").value;
