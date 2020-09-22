@@ -16,6 +16,10 @@
             alert("Cihazınız bu websitesi ile uyumlu değil / Your device is not compatible with this device");
             window.location = "https://ingames.ml/about.html";
         }
+        if(window.localStorage.getItem("username") == null){
+            alert("You need to have an active subscription to open this page");
+            document.location = "https://ingames.ml";
+        }
     </script>
 </head>
 <body style="background-color: rgb(0, 0, 0)">
@@ -62,11 +66,12 @@
             </div>
         </div>
 
-        <div style="float: left; height:300px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 13%; margin-top: 5%;">
+        <div style="float: left; height:300px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
+            <img src="https://ingames.ml/TDSPoster.png" style="width: 100%; height: 100%; float: left;">
             <center style="margin-top: 150%;">
-                Game name
+                The Deadly Sins
                 <br>
-                <small>Dev Name</small>
+                <small>InGames</small>
             </center>
         </div>
         <div style="float: left; height:300px ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
