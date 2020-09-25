@@ -67,23 +67,14 @@
     <script>
         if(localStorage.getItem("username") == null){
             document.getElementById("logout").hidden = true;
+            document.getElementById("substore").hidden = true;
             document.getElementById("signup").hidden = false;
         }else{
             document.getElementById("logout").hidden = false;
+            document.getElementById("substore").hidden = false;
             document.getElementById("signup").hidden = true;
         }
         
-        function launcher(){
-            if(localStorage.getItem("username") == null){
-                alert("You cannot download this item without an active subscription")
-                return;
-            }
-            if(navigator.platform.charAt(0) == "M"){
-                 window.location = "https://ingames.ml/InGames%20Launcher%20Mac.zip";
-             }else{
-                 window.location = "https://ingames.ml/InGames%20Launcher%20Win.zip";
-             }
-        }
         function logout(){
             alert("Logged out!");
             localStorage.clear();
