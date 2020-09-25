@@ -8,14 +8,6 @@
 
     <title>InGames - Games</title> 
     <script>
-        if(window.innerWidth < 700){
-            alert("Cihazınız bu websitesi ile uyumlu değil / Your device is not compatible with this device");
-            window.location = "https://ingames.ml/about.html";
-        }
-        if(window.innerHeight < 500){
-            alert("Cihazınız bu websitesi ile uyumlu değil / Your device is not compatible with this device");
-            window.location = "https://ingames.ml/about.html";
-        }
         if(window.localStorage.getItem("username") == null){
             alert("You need to have an active subscription to open this page");
             document.location = "https://ingames.ml";
