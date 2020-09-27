@@ -46,22 +46,28 @@
             </div>
         </div>
     </div>
+    <div style="color: white; margin-left: 3%; margin-top: 1%; width: 50%; float: left; background-color: rgb(26, 26, 26);">
+        <div style="margin-left: 5%;">
+            <div id="absolutewar">
+                <div style="float: left; margin-top: 1%;">Absolute War</div>
+                <button class="btn btn-secondary" style="float: right" onclick="removeItem(document.getElementById('absolutewar'))">X</button>
+                <div style="float: right; margin-top: 1%; margin-right: 5%;"> Free </div>
+            </div>
+        </div>
+    </div>
 
-    <button style="margin-top: 1%; margin-right: 50%; margin-left: 3%; float: left;" class="btn btn-primary" onclick="buy()">Proceed to payment</button>
+    <button style="margin-top: 1%; margin-right: 50%; margin-left: 3%; float: left;" class="btn btn-primary">Proceed to payment</button>
     <script>
-        
-        document.getElementById("tds").hidden = window.localStorage.getItem("tds") == "false";
-        document.getElementById("joy").hidden = window.localStorage.getItem("joy") == "false";
-        
         function removeItem(item){
             window.localStorage.setItem(item.id, "false");
             item.hidden = localStorage.getItem(item.id);
         }
-        
-        function buy(){
-            alert("Downloads are not yet available come back in 2 weeks.");
-        }
-        
+    </script>
+
+    <script>
+        document.getElementById("tds").hidden = window.localStorage.getItem("tds") == "false";
+        document.getElementById("joy").hidden = window.localStorage.getItem("joy") == "false";
+        document.getElementById("absolutewar").hidden = window.localStorage.getItem("absolutewar") == "false";
     </script>
     <script>
         if(localStorage.getItem("username") == null){
