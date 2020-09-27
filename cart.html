@@ -8,6 +8,25 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body style="background-color: rgb(0, 0, 0);">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent" style="height: 6%; background-color: rgb(0, 0, 0); color: rgb(0, 0, 0);">
+        <a class="navbar-brand" href="/">InGames</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/index.html">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="/about.html" tabindex="-1" aria-disabled="true">About</a>
+                <a class="nav-item nav-link active" href="/news.html" tabindex="-1" aria-disabled="true"> News</a>
+                <a class="nav-item nav-link active" href="/addgame.html">Store Submission</a>
+                <a class="nav-item nav-link active" href="/subscriber.html" id="substore">Subscriber Store</a>
+                </div>
+
+            </div>
+
+            <a class="nav-item nav-link active" style="float: right;" onclick="logout()" tabindex="-1" aria-disabled="true" id="logout">Logout</a>
+            <a class="nav-item nav-link active" style="float: right;" href="/apply.html" tabindex="-1" aria-disabled="true" id="signup">Sign up</a>
+</nav>  
     <h1 style="margin-top: 3%; margin-left: 3%; color: white;">Shopping Cart</h1>
     <div style="color: white; margin-left: 3%; margin-top: 3%; width: 50%; float: left; background-color: rgb(26, 26, 26);">
         <div style="margin-left: 5%;">
@@ -39,6 +58,23 @@
     <script>
         document.getElementById("tds").hidden = window.localStorage.getItem("tds") == "false";
         document.getElementById("joy").hidden = window.localStorage.getItem("joy") == "false";
+    </script>
+    <script>
+        if(localStorage.getItem("username") == null){
+            document.getElementById("logout").hidden = true;
+            document.getElementById("substore").hidden = true;
+            document.getElementById("signup").hidden = false;
+        }else{
+            document.getElementById("logout").hidden = false;
+            document.getElementById("substore").hidden = false;
+            document.getElementById("signup").hidden = true;
+        }
+        
+        function logout(){
+            alert("Logged out!");
+            localStorage.clear();
+            window.location.reload();
+        }
     </script>
 </body>
 </html>
