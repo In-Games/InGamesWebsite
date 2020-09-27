@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InGames - Cart</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-color: rgb(0, 0, 0);">
+    <h1 style="margin-top: 3%; margin-left: 3%; color: white;">Shopping Cart</h1>
+    <div style="color: white; margin-left: 3%; margin-top: 3%; width: 50%; float: left; background-color: rgb(26, 26, 26);">
+        <div style="margin-left: 5%;">
+            <div id="tds">
+                <div style="float: left; margin-top: 1%;">The Deadly Sins</div>
+                <button class="btn btn-secondary" style="float: right" onclick="removeItem(document.getElementById('tds'))">X</button>
+                <div style="float: right; margin-top: 1%; margin-right: 5%;"> Free </div>
+            </div>
+        </div>
+    </div>
+    <div style="color: white; margin-left: 3%; margin-top: 1%; width: 50%; float: left; background-color: rgb(26, 26, 26);">
+        <div style="margin-left: 5%;">
+            <div id="joy">
+                <div style="float: left; margin-top: 1%;">Joy</div>
+                <button class="btn btn-secondary" style="float: right" onclick="removeItem(document.getElementById('joy'))">X</button>
+                <div style="float: right; margin-top: 1%; margin-right: 5%;"> Free </div>
+            </div>
+        </div>
+    </div>
+
+    <button style="margin-top: 1%; margin-right: 50%; margin-left: 3%; float: left;" class="btn btn-primary">Proceed to payment</button>
+    <script>
+        function removeItem(item){
+            window.localStorage.setItem(item.id, "false");
+            item.hidden = localStorage.getItem(item.id);
+        }
+    </script>
+
+    <script>
+        document.getElementById("tds").hidden = window.localStorage.getItem("tds") == "false";
+        document.getElementById("joy").hidden = window.localStorage.getItem("joy") == "false";
+    </script>
+</body>
+</html>
