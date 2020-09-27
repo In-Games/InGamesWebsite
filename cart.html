@@ -49,15 +49,26 @@
 
     <button style="margin-top: 1%; margin-right: 50%; margin-left: 3%; float: left;" class="btn btn-primary">Proceed to payment</button>
     <script>
+        
+        document.getElementById("tds").hidden = window.localStorage.getItem("tds") == "false";
+        document.getElementById("joy").hidden = window.localStorage.getItem("joy") == "false";
+        
         function removeItem(item){
             window.localStorage.setItem(item.id, "false");
             item.hidden = localStorage.getItem(item.id);
         }
-    </script>
-
-    <script>
-        document.getElementById("tds").hidden = window.localStorage.getItem("tds") == "false";
-        document.getElementById("joy").hidden = window.localStorage.getItem("joy") == "false";
+        
+        function buy(){
+            if(window.localStorage.getItem("tds") == "true"){
+                if(window.navigator.platform.charAt(0 == "M"){
+                    window.open("https://github.com/InGamesTDS/TheDeadlySinsRelease/raw/master/MacTDS.zip");
+                }
+                else{
+                    window.open("https://github.com/InGamesTDS/TheDeadlySinsRelease/raw/master/WinTDS.zip");
+                }
+            }
+        }
+        
     </script>
     <script>
         if(localStorage.getItem("username") == null){
