@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Deadly Sins</title>
+</head>
+<body style="background-color: black;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent" style="height: 6%; background-color: rgb(0, 0, 0); color: rgb(0, 0, 0);">
+        <a class="navbar-brand" href="/">InGames</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/index.html">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="/about.html" tabindex="-1" aria-disabled="true">About</a>
+                <a class="nav-item nav-link active" href="/news.html" tabindex="-1" aria-disabled="true"> News</a>
+                <a class="nav-item nav-link active" href="/addgame.html">Store Submission</a>
+                <a class="nav-item nav-link active" href="/subscriber.html" id="substore">Subscriber Store</a>
+                </div>
+
+            </div>
+
+            <a class="nav-item nav-link active" style="float: right;" onclick="logout()" tabindex="-1" aria-disabled="true" id="logout">Logout</a>
+            <a class="nav-item nav-link active" style="float: right;" href="/cart.html" tabindex="-1" aria-disabled="true">Cart</a>
+            <a class="nav-item nav-link active" style="float: right;" href="/apply.html" tabindex="-1" aria-disabled="true" id="signup">Sign up</a>
+    </nav>  
+    <div style="background-color: black; margin-left: 10%; margin-right: 10%; margin-top: 5%;">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="https://ingames.ml/tds1.jpeg" alt="First slide" style=" width: 150px; height: 550px;">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://ingames.ml/tds2.jpeg" alt="Second slide" style=" width: 150px; height: 550px;">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="https://ingames.ml/tds3.jpeg" alt="Third slide" style=" width: 150px; height: 550px;">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+    </div>
+    <div style="float: left; width: 10%; color: white; margin-top: 50px; margin-left: 10%;">
+        The Deadly Sins
+    </div>
+    <div style="float: left; width: 40%; color: white; margin-top: 50px; margin-left: 10%;">
+        The Deadly Sins is a first person shooter game developed by InGames. In The Deadly Sins you will try to save your neighbors from the dungeons of hell. You will travel through various places through the portals and secret passages. You can also play against your friends and strangers in TDS Online.
+    </div>
+    <div style="float: right; width: 150px; color: white; margin-top: 35px; margin-right: 7%;">
+      <p>Free</p>
+      <button onclick="window.localStorage.setItem('tds', 'true'); alert('Added to cart')" class="btn btn-primary"> Add to cart</button>
+  </div>
+   <script>
+       if(localStorage.getItem("username") == null){
+           document.getElementById("logout").hidden = true;
+           document.getElementById("substore").hidden = true;
+           document.getElementById("signup").hidden = false;
+       }else{
+           document.getElementById("logout").hidden = false;
+           document.getElementById("substore").hidden = false;
+           document.getElementById("signup").hidden = true;
+       }
+        
+       function logout(){
+           alert("Logged out!");
+           localStorage.clear();
+           window.location.reload();
+       }
+   </script>
+</body>
+</html>
