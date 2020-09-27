@@ -36,6 +36,7 @@
             </div>
 
             <a class="nav-item nav-link active" style="float: right;" onclick="logout()" tabindex="-1" aria-disabled="true" id="logout">Logout</a>
+            <a class="nav-item nav-link active" style="float: right;" href="/cart.html" tabindex="-1" aria-disabled="true">Cart</a>
             <a class="nav-item nav-link active" style="float: right;" href="/apply.html" tabindex="-1" aria-disabled="true" id="signup">Sign up</a>
 </nav>  
         <br>
@@ -59,7 +60,7 @@
             </center>
         </div>
         <div style="float: left; height:40% ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
-            <img src="https://ingames.ml/TDSPoster.png" style="width: 100%; height: 100%; float: left;">
+            <img onclick="window.localStorage.setItem('tds', 'true'); alert('Added to cart')" src="https://ingames.ml/TDSPoster.png" style="width: 100%; height: 100%; float: left;">
             <center style="margin-top: 150%;">
                 The Deadly Sins
                 <br>
@@ -75,7 +76,7 @@
             </center>
         </div>
         <div style="float: left; height:40% ; width: 14.2%; color: white; background-color: rgb(64, 64, 64); margin-left: 1%; margin-top: 5%;">
-            <img src="https://ingames.ml/joy.png" style="width: 100%; height: 100%; float: left;">
+            <img onclick="window.localStorage.setItem('joy', 'true'); alert('Added to cart')" src="https://ingames.ml/joy.png" style="width: 100%; height: 100%; float: left;">
             <center style="margin-top: 150%;">
                 Joy
                 <br>
