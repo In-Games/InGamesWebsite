@@ -45,7 +45,7 @@
 
     function register(){
         var today = new Date();
-        var fulldate = String(today.getDate()) + "/" + String(today.getMonth()) + "/" + String(today.getFullYear());
+        var fulldate = today.getDate() + "\n" + today.getMonth();
         var name = document.getElementById("firstname").value;
         var mail = document.getElementById("email").value;
         var password = document.getElementById("password").value;
