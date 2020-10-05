@@ -215,7 +215,7 @@
             document.getElementById("signup").hidden = true;
         }
 
-        if(localStorage.getItem("date").substr(0, localStorage.getItem("date").indexOf("\n") + 1) == date.getDate() && parseInt(localStorage.getItem("date").substr(localStorage.getItem("date").indexOf("\n"), localStorage.getItem("date").length))!= date.getMonth()){
+        if(localStorage.getItem("date").substr(0, localStorage.getItem("date").indexOf("\n") + 1) <= date.getDate() && parseInt(localStorage.getItem("date").substr(localStorage.getItem("date").indexOf("\n"), localStorage.getItem("date").length))!= date.getMonth()){
             alert("Your subscription term has came to an end please renew your subscription");
             localStorage.clear();
             window.location = "/apply.html";
