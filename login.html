@@ -21,29 +21,31 @@
             var email = document.getElementById("email").value;
             var password = document.getElementById("password").value;
 
-            localStorage.setItem("email", document.getElementById("email").value);
-            localStorage.setItem("username", document.getElementById("email").value);
-            localStorage.setItem("password", document.getElementById("password").value);
-
             var request = new XMLHttpRequest();
 
             request.onreadystatechange = function() {
             jsontext = request.responseText;
 
             if(jsontext != ""){
-                if(password == jsontext.substr(jsontext.indexOf("\n") + 1, jsontext.length)){
-                    alert("Logged in");
-                    window.location = "https://ingames.ml"
+                if(password == jsontext.substr(jsontext.indexOf("\n") + 1, jsontext.length) && localStorage.getItem("username") != document.getElementById("email").value){
+                    alert("Logging in");
+
+                    localStorage.setItem("email", document.getElementById("email").value);
+
+                    window.location = "/logindatechecker.html";
                 }
                 else{
-                    alert("Some information is wrong!")
+                    if(localStorage.getItem("username") != document.getElementById("email").value){
+                        alert("Some information is wrong!");
+                    }
+                    else{
+                        alert("Already logged in");
+                    }
                 }
             }
             }
 
-            request.open("GET", "https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/ingames-website.appspot.com/o/users%2F" + email + "%20%2F%20" + email + ".txt?alt=media&token=781143a6-5e1f-4cc8-b46c-dc4ad8c611f2", true);
-
-
+            request.open("GET", "https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/ingames-website.appspot.com/o/users%2F" + email + "%2F" + email + ".txt?alt=media&token=781143a6-5e1f-4cc8-b46c-dc4ad8c611f2", true);
             request.send();
         }
     </script>
