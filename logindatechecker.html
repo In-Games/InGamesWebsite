@@ -1,0 +1,24 @@
+You will be redirrected in a minute! We checking your subscription.
+
+<script>
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function() {
+    jsontext = request.responseText;
+    var date = new Date();
+        if(jsontext != ""){
+            if(jsontext.substr(0, jsontext.indexOf("\n") + 1) == date.getDate() && parseInt(jsontext.substr(jsontext.indexOf("\n") + 1, jsontext.length)) != date.getMonth()){
+                alert("Your subscription term has came to an end please renew your subscription");
+            }
+            else{
+                localStorage.setItem("username", localStorage.getItem("email"));
+                localStorage.setItem("date", jsontext);
+                alert("Login Successful");
+                window.location = "https://ingames.ml";
+            }
+        }
+    }
+
+    request.open("GET", "https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/ingames-website.appspot.com/o/users%2F" + localStorage.getItem("email") + "%2Fdate.txt?alt=media&token=781143a6-5e1f-4cc8-b46c-dc4ad8c611f2", true);
+    request.send();
+</script>
