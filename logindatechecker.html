@@ -7,7 +7,7 @@ You will be redirrected in a minute! We checking your subscription.
     jsontext = request.responseText;
     var date = new Date();
         if(jsontext != ""){
-            if(jsontext.substr(0, jsontext.indexOf("\n") + 1) == date.getDate() && parseInt(jsontext.substr(jsontext.indexOf("\n") + 1, jsontext.length)) != date.getMonth()){
+            if(jsontext.substr(0, jsontext.indexOf("\n") + 1) <= date.getDate() && parseInt(jsontext.substr(jsontext.indexOf("\n") + 1, jsontext.length)) != date.getMonth()){
                 alert("Your subscription term has came to an end please renew your subscription");
             }
             else{
