@@ -66,9 +66,9 @@
     </div>
     <div style="float: right; width: 150px; color: white; margin-top: 35px; margin-right: 7%; margin-bottom: 10%;">
       <p>Subscribe now!</p>
-      <button> Coming soon </button>
+      <button onclick="window.localStorage.setItem('mephisto', 'true'); alert('Added to cart')" class="btn btn-primary"> Coming soon </button>
   </div>
-   <script>
+    
        if(localStorage.getItem("username") == null){
            document.getElementById("logout").hidden = true;
            document.getElementById("substore").hidden = true;
