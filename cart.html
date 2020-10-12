@@ -66,7 +66,7 @@
         </div>
     </div>
 
-    <button style="margin-top: 1%; margin-right: 50%; margin-left: 3%; float: left;" class="btn btn-primary">Proceed to payment</button>
+    <button onclick="checkout()" style="margin-top: 1%; margin-right: 50%; margin-left: 3%; float: left;" class="btn btn-primary">Check out</button>
     <script>
         function removeItem(item){
             window.localStorage.setItem(item.id, "false");
@@ -79,6 +79,25 @@
         document.getElementById("joy").hidden = window.localStorage.getItem("joy") == "false";
         document.getElementById("absolutewar").hidden = window.localStorage.getItem("absolutewar") == "false";
         document.getElementById("mephisto").hidden = window.localStorage.getItem("mephisto") == "false";
+        
+        void checkout(){
+            if(localStorage.getItem("username") == null){
+                alert("You need an active subscription to download content!")
+                return;
+            }
+            if(!document.getElementById("tds").hidden){
+                alert("The Deadly Sins will be downloaded")
+            }
+            if(!document.getElementById("joy").hidden){
+                alert("Joy will be downloaded")
+            }
+            if(!document.getElementById("absolutewar").hidden){
+                alert("Absolute War will be downloaded")
+            }
+            if(!document.getElementById("mephisto").hidden){
+                alert("Mephiste will be downloaded")
+            }
+        }
     </script>
     <script>
         if(localStorage.getItem("username") == null){
