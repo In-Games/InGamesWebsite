@@ -16,6 +16,9 @@
     </div>
 
     <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
         function login(){
             var username = document.getElementById("email").value;
             var email = document.getElementById("email").value;
