@@ -205,6 +205,9 @@
 </div>
     <p style="margin-top: 160%; color: black">omer</p>
     <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
         if(localStorage.getItem("username") == null){
             document.getElementById("logout").hidden = true;
             document.getElementById("substore").hidden = true;
