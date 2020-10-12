@@ -1,6 +1,9 @@
 You will be redirrected in a minute! We are checking your subscription.
 
 <script>
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
     var request = new XMLHttpRequest();
 
     request.onreadystatechange = function() {
