@@ -33,7 +33,7 @@
             <div id="tds">
                 <div style="float: left; margin-top: 1%;">The Deadly Sins</div>
                 <button class="btn btn-secondary" style="float: right" onclick="removeItem(document.getElementById('tds'))">X</button>
-                <div style="float: right; margin-top: 1%; margin-right: 5%;"> Free </div>
+                <div style="float: right; margin-top: 1%; margin-right: 5%;"> Subscriber Only </div>
             </div>
         </div>
     </div>
@@ -42,7 +42,7 @@
             <div id="joy">
                 <div style="float: left; margin-top: 1%;">Joy</div>
                 <button class="btn btn-secondary" style="float: right" onclick="removeItem(document.getElementById('joy'))">X</button>
-                <div style="float: right; margin-top: 1%; margin-right: 5%;"> Free </div>
+                <div style="float: right; margin-top: 1%; margin-right: 5%;"> Subscriber Only </div>
             </div>
         </div>
     </div>
@@ -51,7 +51,7 @@
             <div id="absolutewar">
                 <div style="float: left; margin-top: 1%;">Absolute War</div>
                 <button class="btn btn-secondary" style="float: right" onclick="removeItem(document.getElementById('absolutewar'))">X</button>
-                <div style="float: right; margin-top: 1%; margin-right: 5%;"> Free </div>
+                <div style="float: right; margin-top: 1%; margin-right: 5%;"> Subscriber Only </div>
             </div>
         </div>
     </div>
@@ -81,8 +81,13 @@
         document.getElementById("mephisto").hidden = window.localStorage.getItem("mephisto") == "false";
         
         function checkout(){
+            
+            if(!document.getElementById("mephisto").hidden){
+                alert("Mephisto will be downloaded")
+            }
+            
             if(localStorage.getItem("username") == null){
-                alert("You need an active subscription to download content!")
+                alert("You need an active subscription to download this content!")
                 return;
             }
             if(!document.getElementById("tds").hidden){
@@ -93,9 +98,6 @@
             }
             if(!document.getElementById("absolutewar").hidden){
                 alert("Absolute War will be downloaded")
-            }
-            if(!document.getElementById("mephisto").hidden){
-                alert("Mephiste will be downloaded")
             }
         }
     </script>
