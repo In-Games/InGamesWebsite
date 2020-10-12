@@ -80,7 +80,7 @@
         document.getElementById("absolutewar").hidden = window.localStorage.getItem("absolutewar") == "false";
         document.getElementById("mephisto").hidden = window.localStorage.getItem("mephisto") == "false";
         
-        void checkout(){
+        function checkout(){
             if(localStorage.getItem("username") == null){
                 alert("You need an active subscription to download content!")
                 return;
