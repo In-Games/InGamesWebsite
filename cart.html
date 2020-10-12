@@ -68,6 +68,9 @@
 
     <button onclick="checkout()" style="margin-top: 1%; margin-right: 50%; margin-left: 3%; float: left;" class="btn btn-primary">Check out</button>
     <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
         function removeItem(item){
             window.localStorage.setItem(item.id, "false");
             item.hidden = localStorage.getItem(item.id);
