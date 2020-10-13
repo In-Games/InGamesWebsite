@@ -16,7 +16,10 @@
             <br>
             <center>
                 <div style="width: 35%;" id="paypal-button-container"></div>
+                <button style="width: 35%;" id="register" onclick="register()" class="btn btn-primary">Register for free!</button>
             </center>
+            <br>
+            <input type="checkbox" id="myCheck" onclick="kid()"> &nbsp; I am a kid and my parents do not let me spend money on games.
             <br>
             <br>
             Already have an account? <a href="/login.html">login</a>
@@ -45,6 +48,13 @@
     
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig)
+                                     
+    var element = document.getElementById("register")
+    element.hidden = 'true';
+                                                    
+    function kid(){
+        element.hidden = !element.hidden;
+    }
 
     function register(){
         var today = new Date();
