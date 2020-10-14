@@ -106,10 +106,10 @@
 
         request2.onreadystatechange = function() {
             jsontext2 = request2.responseText;
-            moneyval = parseFloat(jsontext2);
+            moneyval = jsontext2;
             
 
-            document.getElementById("money").innerHTML = moneyval;
+            document.getElementById("money").innerHTML = moneyval + "$";
             
         }
 
