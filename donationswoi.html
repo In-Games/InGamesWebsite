@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>War of Infinity</title>
+</head>
+<body style="background-color: rgb(220, 220, 220);">
+    <center>
+        <h1 style="font-family: sans-serif; color: white; background-color: black;"> <div style="margin-top: 10px;"> War of Infinity </div> </h1>
+        <br>
+        <iframe style="float: left; margin-left: 5%;"  width="55%" height="500px" src="/WOI TRAILER 2.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        <div style="margin-top: 5%;">
+            <h2 style="font-family: sans-serif;"> Collected:</h2>
+            <h2 style="font-family: sans-serif;" id="money">124$</h2>
+            <h2 style="font-family: sans-serif;">Backers: </h2>
+            <h2 style="font-family: sans-serif;" id="backer">52</h2>
+            <div id="paypal-button-container" style="width: 20%; float: left; margin-top: 4%; margin-left: 10%;"></div>
+            <input id="donationValue" type="number" style="width: 20%; float: left; margin-top: 1%; margin-left: 9.8%;" placeholder="Amount" class="form-control">
+        </div>
+    </center>
+    <center style="margin-top: 400px;">
+        <h3>Join the war older than the history of the planet. Save yourself and your new home</h3>
+        <img src="logoingames.png" width="100px">
+    </center>
+    <p style="margin-top: 50px; margin-left: 5%; font-family: sans-serif; width: 40%; float: left;">
+        Survive a horrific accident
+        <br>
+        Your shuttle is heavily damaged and even your smallest chance of survival is gone. Get out of this desperate situation. Stand up and start the discovery of your new home.
+        <br>
+        <br>
+        Discover the secrets of a new planet
+        <br>
+        Survive a spaceship wreck and discover the secrets of a new, dreadful planet. Unravel the ancient secrets of a lost planet covered in ice and snow and nothing else.    
+        <br>
+        <br>
+        Stop a war older than the universe itself
+        <br>
+        A snow covered planet and a space accident and now a war. Find yourself in a war between the two of the most powerful warlords ever lived. Bring peace to your new home, save yourself and the residents of Quariya.
+        <br>
+        <br>
+        Find hopes of salvation
+        <br>
+        Try to leave this ice covered hell, find hopes of salvation and try to built a spaceship to escape the fears of war.
+        <br>
+        <br>
+        Write your own destiny
+        <br>
+        Make decisions that will impact your future and shape your experience. Your decisions matter and can change everything. 
+    </p>
+    <img src="/woiposter.png" style="width: 40%; height: 40%; float: right; margin-top: 50px;">
+    
+    <center style="margin-top: 700px; margin-bottom: 50px;">
+        <div style="width: 60%;" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="woi1.png" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="woi2.png" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="woi3.png" alt="Third slide">
+            </div>
+            </div>
+            </a>
+        </div>
+        <br>
+    </center>
+    <center style="margin-bottom: 50px;">
+        <hr style="background-color: black;">
+        <small style="color: black;">
+            <a href="mailto:contact@ingames.ml">Contact Us</a>
+        </small>
+    </center>
+</body>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+
+    <script>
+        var backerval = 1;
+        var moneyval = 1;
+
+        var request = new XMLHttpRequest();
+
+        request.onreadystatechange = function() {
+            jsontext = request.responseText;
+            backerval = parseFloat(jsontext);
+            document.getElementById("backer").innerHTML = backerval;
+            
+        }
+
+        request.open("GET", "https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/ingames-website.appspot.com/o/crowdfund%2Fbacker.txt?alt=media&token=da9cc033-4496-4351-adb3-ff41196d4d60", true);
+        request.send();
+
+        var request2 = new XMLHttpRequest();
+
+        request2.onreadystatechange = function() {
+            jsontext2 = request2.responseText;
+            moneyval = parseFloat(jsontext2);
+            
+
+            document.getElementById("money").innerHTML = moneyval;
+            
+        }
+
+        request2.open("GET", "https://cors-anywhere.herokuapp.com/https://firebasestorage.googleapis.com/v0/b/ingames-website.appspot.com/o/crowdfund%2Famount.txt?alt=media&token=da9cc033-4496-4351-adb3-ff41196d4d60", true);
+        request2.send();
+
+        document.addEventListener('contextmenu', function(e) {
+            // e.preventDefault();
+        });
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyAuHLCZsy_C23ts1yKTCTbDhH7QokkBvso",
+        authDomain: "ingames-website.firebaseapp.com",
+        databaseURL: "https://ingames-website.firebaseio.com",
+        projectId: "ingames-website",
+        storageBucket: "ingames-website.appspot.com",
+        messagingSenderId: "1008846259700",
+        appId: "1:1008846259700:web:c79e9fd5e401c7a360e5a1",
+        measurementId: "G-XRJD3LKKJ3"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig)
+
+    function donate(){
+        var ref = firebase.storage();
+        var storeref = ref.ref("crowdfund/" + "amount.txt");
+        var datefileref = ref.ref("crowdfund/" + "backer.txt");
+        
+        var backer = new Blob([backerval + 1], { type: "text/plain;charset=utf-8" })
+        var file = new Blob([parseFloat(moneyval) + parseFloat(document.getElementById("donationValue").value)], { type: "text/plain;charset=utf-8" });
+
+        datefileref.put(backer).then(function(){
+            storeref.put(file).then(function() {
+                alert("Donation received");
+                window.location.reload();
+            });
+        });
+    }
+    </script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AdhanVdPM7AL9Tk1bu1KdjrRf3B9yo1hppZdhc1hexNoRmVchBc_BttWlKSMHyU7mOjvjFSoJshcT0Zl"> // Replace YOUR_SB_CLIENT_ID with your sandbox client ID
+    </script>
+
+    <!-- Add the checkout buttons, set up the order and approve the order -->
+    <script>
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+        return actions.order.create({
+            purchase_units: [{
+            amount: {
+                value: document.getElementById("donationValue").value
+            }
+            }]
+        });
+        },
+        onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+            donate();
+            alert('Transaction completed by ' + details.payer.name.given_name);
+        });
+        }
+    }).render('#paypal-button-container'); // Display payment options on your web page
+    </script>
+</html>
