@@ -100,28 +100,25 @@
     </head>
 
     <body>
-    <script src="https://www.paypal.com/sdk/js?client-id=AdhanVdPM7AL9Tk1bu1KdjrRf3B9yo1hppZdhc1hexNoRmVchBc_BttWlKSMHyU7mOjvjFSoJshcT0Zl"> // Replace YOUR_SB_CLIENT_ID with your sandbox client ID
-    </script>
-
-    <!-- Add the checkout buttons, set up the order and approve the order -->
-    <script>
-    paypal.Buttons({
-        createOrder: function(data, actions) {
-        return actions.order.create({
-            purchase_units: [{
-            amount: {
-                value: '0.5'
-            }
-            }]
-        });
-        },
-        onApprove: function(data, actions) {
-        return actions.order.capture().then(function(details) {
-            alert('Transaction completed by ' + details.payer.name.given_name);
-            register();
-        });
-        }
-    }).render('#paypal-button-container'); // Display payment options on your web page
-    </script>
+        <script src="https://www.paypal.com/sdk/js?client-id=AdhanVdPM7AL9Tk1bu1KdjrRf3B9yo1hppZdhc1hexNoRmVchBc_BttWlKSMHyU7mOjvjFSoJshcT0Zl&vault=true" data-sdk-integration-source="button-factory"></script>
+        <script>
+          paypal.Buttons({
+              style: {
+                  shape: 'rect',
+                  color: 'black',
+                  layout: 'vertical',
+                  label: 'subscribe'
+              },
+              createSubscription: function(data, actions) {
+                return actions.subscription.create({
+                  'plan_id': 'P-7UR07098D7072700WL6GTW6I'
+                });
+              },
+              onApprove: function(data, actions) {
+                alert("Subscribed " + data.subscriptionID);
+                register();
+              }
+          }).render('#paypal-button-container');
+        </script>
 </body>
 </html>
