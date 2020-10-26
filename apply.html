@@ -119,12 +119,13 @@
 
 <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
 <button
-  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  style="color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
   id="checkout-button-price_1HgT3oCnDpjIXNnsjbTYXSDy"
+  class="btn btn-secondary"
   role="link"
   type="button"
 >
-  Checkout
+  Register
 </button>
 
 <div id="error-message"></div>
@@ -134,11 +135,11 @@
   var stripe = Stripe('pk_live_51Hb7H2CnDpjIXNns9NPxaM4v6uGFZ3tAv6yW12xnSIHRmdqlILequsa9N0D0cZ7hO6t5oYaQj57XYIVwfaAXEDY700oArw7tQo');
 
   var checkoutButton = document.getElementById('checkout-button-price_1HgT3oCnDpjIXNnsjbTYXSDy');
-  checkoutButton.addEventListener('click', function () {
+  checkoutButton.addEventListener('click', function () {  
+    save();
     // When the customer clicks on the button, redirect
     // them to Checkout.
     stripe.redirectToCheckout({
-      save();
       lineItems: [{price: 'price_1HgT3oCnDpjIXNnsjbTYXSDy', quantity: 1}],
       mode: 'subscription',
       // Do not rely on the redirect to the successUrl for fulfilling
