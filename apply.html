@@ -56,9 +56,8 @@
         element.hidden = !element.hidden;
     }
 
-    function register(){
-        var today = new Date();
-        var fulldate = today.getDate() + "\n" + today.getMonth();
+    function save(){
+        localStorage.clear();
         var name = document.getElementById("firstname").value;
         var mail = document.getElementById("email").value;
         var password = document.getElementById("password").value;
@@ -66,8 +65,30 @@
         var recommender = document.getElementById("register").value;
 
         if(name.length < 4 || mail.length < 4 || password.length < 4){
-          alert("Missing entries!");
           return;
+        }
+
+
+        localStorage.setItem("emailprev", mail);
+        localStorage.setItem("usernameprev", name);
+        localStorage.setItem("passwordprev", password);
+    }
+
+    function register(){
+        if(localStorage.getItem("payment") != "true"){
+            return;
+        }
+
+        var today = new Date();
+        var fulldate = today.getDate() + "\n" + today.getMonth();
+        var name = localStorage.getItem("usernameprev");
+        var mail = localStorage.getItem("emailprev");
+        var password = localStorage.getItem("passwordprev");
+        
+        var recommender = document.getElementById("register").value;
+
+        if(name.length < 4 || mail.length < 4 || password.length < 4){
+            
         }
 
         var ref = firebase.storage();
@@ -80,9 +101,9 @@
         var recommender = new Blob([recommender], { type: "text/plain;charset=utf-8" });
         
         
-        localStorage.setItem("email", document.getElementById("email"));
-        localStorage.setItem("username", document.getElementById("username"));
-        localStorage.setItem("password", document.getElementById("password"));
+        localStorage.setItem("email", localStorage.getItem("emailprev"));
+        localStorage.setItem("username", localStorage.getItem("usernameprev"));
+        localStorage.setItem("password", localStorage.getItem("passwordprev"));
         localStorage.setItem("date", fulldate);
 
         datefileref.put(datefile).then(function(){
@@ -93,32 +114,59 @@
             });
         });
     }
+    register();
     </script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
-    </head>
+    <!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
 
-    <body>
-        <script src="https://www.paypal.com/sdk/js?client-id=AdhanVdPM7AL9Tk1bu1KdjrRf3B9yo1hppZdhc1hexNoRmVchBc_BttWlKSMHyU7mOjvjFSoJshcT0Zl&vault=true" data-sdk-integration-source="button-factory"></script>
-        <script>
-          paypal.Buttons({
-              style: {
-                  shape: 'rect',
-                  color: 'black',
-                  layout: 'vertical',
-                  label: 'subscribe'
-              },
-              createSubscription: function(data, actions) {
-                return actions.subscription.create({
-                  'plan_id': 'P-7UR07098D7072700WL6GTW6I'
-                });
-              },
-              onApprove: function(data, actions) {
-                alert("Subscribed " + data.subscriptionID);
-                register();
-              }
-          }).render('#paypal-button-container');
-        </script>
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+    <center>
+        <button
+            style="color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+            class="btn btn-secondary"
+            id="checkout-button-price_1HgRhwCnDpjIXNnsm0j2mnTj"
+            role="link"
+            type="button"
+            >
+            Register
+        </button>
+    </center>
+
+<div id="error-message"></div>
+
+    <script>
+        (function() {
+        var stripe = Stripe('pk_test_51Hb7H2CnDpjIXNns57UL9RUI6rFdcrYLPG9bi1t8TQl8A87SxCGkWrE5oy2RajBYImDjBsw85othmGf7beTi26cc00A7qPgdoi');
+
+        var checkoutButton = document.getElementById('checkout-button-price_1HgRhwCnDpjIXNnsm0j2mnTj');
+        checkoutButton.addEventListener('click', function () {
+            save();
+            // When the customer clicks on the button, redirect
+            // them to Checkout.
+
+            stripe.redirectToCheckout({
+            lineItems: [{price: 'price_1HgRhwCnDpjIXNnsm0j2mnTj', quantity: 1}],
+            mode: 'subscription',
+            // Do not rely on the redirect to the successUrl for fulfilling
+            // purchases, customers may not always reach the success_url after
+            // a successful payment.
+            // Instead use one of the strategies described in
+            // https://stripe.com/docs/payments/checkout/fulfill-orders
+            
+            successUrl: 'http://127.0.0.1:5500/payed.html',
+            cancelUrl: 'http://127.0.0.1:5500/apply.html',
+            })
+            .then(function (result) {
+            if (result.error) {
+                // If `redirectToCheckout` fails due to a browser or network
+                // error, display the localized error message to your customer.
+                var displayError = document.getElementById('error-message');
+                displayError.textContent = result.error.message;
+            }
+            });
+        });
+        })();
+    </script>
 </body>
 </html>
