@@ -30,6 +30,7 @@
                 if(password == jsontext.substr(jsontext.indexOf("\n") + 1, jsontext.length) && localStorage.getItem("username") != document.getElementById("email").value){
                     alert("Logging in");
 
+                    localStorage.setItem("username", document.getElementById("email").value);
                     localStorage.setItem("email", document.getElementById("email").value);
 
                     window.location = "/index.html";
