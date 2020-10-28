@@ -1,0 +1,28 @@
+<a href="/apply/apply.html">If not redirrected click here</a>
+
+<script>
+    function getLocation() {
+    alert("You will be redirrected in a few seconds");
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        alert("Location is not supported by this browser.");
+        window.location = "/apply/apply.html";
+    }
+    }
+
+    function showPosition(position) {
+            if(position.coords.latitude > 36 && position.coords.latitude < 42){
+                if(position.coords.longitude > 26 && position.coords.longitude <45){
+                    window.location = "/apply/tr.html";
+                }
+                else{
+                    window.location = "/apply/apply.html";
+                }
+            }
+            else{
+                window.location = "/apply/apply.html";
+            }
+        }
+    getLocation();
+</script>
