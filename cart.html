@@ -56,6 +56,15 @@
     </div>
     <div style="color: white; margin-left: 3%; margin-top: 1%; width: 50%; float: left; background-color: rgb(26, 26, 26);">
         <div style="margin-left: 5%;">
+            <div id="whale">
+                <div style="float: left; margin-top: 1%;">Bread & Whales</div>
+                <button class="btn btn-secondary" style="float: right" onclick="removeItem(document.getElementById('whale'))">X</button>
+                <div style="float: right; margin-top: 1%; margin-right: 5%;"> Subscriber Only </div>
+            </div>
+        </div>
+    </div>
+    <div style="color: white; margin-left: 3%; margin-top: 1%; width: 50%; float: left; background-color: rgb(26, 26, 26);">
+        <div style="margin-left: 5%;">
             <div id="beast">
                 <div style="float: left; margin-top: 1%;">Beast Hunter</div>
                 <button class="btn btn-secondary" style="float: right" onclick="removeItem(document.getElementById('beast'))">X</button>
@@ -111,6 +120,7 @@
         document.getElementById("miner").hidden = window.localStorage.getItem("miner") == "false";
         document.getElementById("mephisto").hidden = window.localStorage.getItem("mephisto") == "false";
         document.getElementById("beast").hidden = window.localStorage.getItem("beast") == "false";
+        document.getElementById("whale").hidden = window.localStorage.getItem("whale") == "false";
 
         function checkout(){
             
@@ -124,6 +134,9 @@
             }
             if(!document.getElementById("tds").hidden){
                 alert("The Deadly Sins will be downloaded")
+            }
+            if(!document.getElementById("whale").hidden){
+                alert("Bread & Whales will be downloaded")
             }
             if(!document.getElementById("beast").hidden){
                 alert("Beast Hunter will be downloaded")
