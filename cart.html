@@ -38,6 +38,15 @@
     </div>
     <div style="color: white; margin-left: 3%; margin-top: 1%; width: 50%; float: left; background-color: rgb(26, 26, 26);">
         <div style="margin-left: 5%;">
+            <div id="miner">
+                <div style="float: left; margin-top: 1%;">The Miner</div>
+                <button class="btn btn-secondary" style="float: right" onclick="removeItem(document.getElementById('miner'))">X</button>
+                <div style="float: right; margin-top: 1%; margin-right: 5%;"> Subscriber Only </div>
+            </div>
+        </div>
+    </div>
+    <div style="color: white; margin-left: 3%; margin-top: 1%; width: 50%; float: left; background-color: rgb(26, 26, 26);">
+        <div style="margin-left: 5%;">
             <div id="joy">
                 <div style="float: left; margin-top: 1%;">Joy</div>
                 <button class="btn btn-secondary" style="float: right" onclick="removeItem(document.getElementById('joy'))">X</button>
@@ -90,6 +99,7 @@
         document.getElementById("joy").hidden = window.localStorage.getItem("joy") == "false";
         document.getElementById("absolutewar").hidden = window.localStorage.getItem("absolutewar") == "false";
         document.getElementById("dungeonone").hidden = window.localStorage.getItem("dungeonone") == "false";
+        document.getElementById("miner").hidden = window.localStorage.getItem("miner") == "false";
         document.getElementById("mephisto").hidden = window.localStorage.getItem("mephisto") == "false";
         
         function checkout(){
@@ -105,8 +115,11 @@
             if(!document.getElementById("tds").hidden){
                 alert("The Deadly Sins will be downloaded")
             }
+            if(!document.getElementById("miner").hidden){
+                alert("The Miner will be downloaded")
+            }
             if(!document.getElementById("dungeonone").hidden){
-                alert("The Dungeon One will be downloaded")
+                alert("Dungeon One will be downloaded")
             }
             if(!document.getElementById("joy").hidden){
                 alert("Joy will be downloaded")
