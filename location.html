@@ -1,4 +1,4 @@
-<a href="/apply/apply.html">If you are not redirrected click here</a> (Redirrects can take up to a minute!)
+<a href="/apply/choose.html">If you are not redirrected click here</a> (Redirrects can take up to a minute!)
 
 <script>
     function getLocation() {
@@ -7,7 +7,7 @@
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
         alert("Location is not supported by this browser.");
-        window.location = "/apply/apply.html";
+        window.location = "/apply/choose.html";
     }
     }
 
@@ -17,11 +17,11 @@
                     window.location = "/apply/tr.html";
                 }
                 else{
-                    window.location = "/apply/apply.html";
+                    window.location = "/apply/choose.html";
                 }
             }
             else{
-                window.location = "/apply/apply.html";
+                window.location = "/apply/choose.html";
             }
         }
     getLocation();
