@@ -92,11 +92,9 @@
     <script>
         if(localStorage.getItem("username") == null){
             document.getElementById("logout").hidden = true;
-            document.getElementById("substore").hidden = true;
             document.getElementById("signup").hidden = false;
         }else{
             document.getElementById("logout").hidden = false;
-            document.getElementById("substore").hidden = false;
             document.getElementById("signup").hidden = true;
         }
         
